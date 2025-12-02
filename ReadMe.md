@@ -8,7 +8,7 @@ An open-source image board platform with support for galleries, tagging, and soc
 
 - [x] Basic project structure (Laravel 11, Inertia, Vue 3, TypeScript, Vite)
 - [x] User authentication with Laravel Fortify
-- [x] MariaDB database configured for dev
+- [x] SQLite database configured for dev
 - [ ] Image upload and gallery management
 - [ ] Tag system
 - [ ] Social features — likes, comments
@@ -22,7 +22,7 @@ An open-source image board platform with support for galleries, tagging, and soc
 composer install
 npm install
 
-# Set up environment (uses local MariaDB by default)
+# Set up environment (uses local SQLite by default)
 php artisan migrate --seed
 
 # Start dev servers
@@ -44,7 +44,7 @@ This will prompt you for email, name, and password.
 
 ## Environment Variables (Current Defaults)
 
-These are currently configured for local development with MariaDB:
+These are currently configured for local development with SQLite:
 
 ```env
 APP_NAME=Laravel
@@ -52,12 +52,14 @@ APP_ENV=local
 APP_DEBUG=true
 APP_URL=http://localhost
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=galaxy_image_board
-DB_USERNAME=root
-DB_PASSWORD=
+DB_CONNECTION=sqlite
+# For MariaDB/MySQL, uncomment and configure the following:
+# DB_CONNECTION=mysql
+# DB_HOST=127.0.0.1
+# DB_PORT=3306
+# DB_DATABASE=galaxy_image_board
+# DB_USERNAME=root
+# DB_PASSWORD=
 
 SESSION_DRIVER=database
 CACHE_STORE=database
