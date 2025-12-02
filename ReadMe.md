@@ -32,6 +32,16 @@ npm run dev             # Vite (hot reload)
 
 Then visit `http://localhost:8000` in your browser.
 
+## Admin Setup
+
+Registration is disabled by default. To create the initial admin account:
+
+```bash
+php artisan admin:create
+```
+
+This will prompt you for email, name, and password.
+
 ## Environment Variables (Current Defaults)
 
 These are currently configured for local development with MariaDB:

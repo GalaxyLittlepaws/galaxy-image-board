@@ -15,3 +15,8 @@ Route::get('dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/settings.php';
+
+// Admin routes
+Route::middleware(['auth', 'verified', 'admin'])->prefix('admin')->group(function () {
+    Route::resource('users', \App\Http\Controllers\AdminUserController::class);
+});
